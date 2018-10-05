@@ -31,10 +31,12 @@ def print_most_frequent_words(list_of_words):
 
 if __name__ == '__main__':
     text_file_name = get_text_file_name()
-    if text_file_name:
+    if text_file_name is not None:
         text_from_file = load_data(text_file_name)
-
-    if text_from_file:
-        count_of_popular_words = 10
-        most_frequent_words = get_most_frequent_words(text_from_file, count_of_popular_words)
-        print_most_frequent_words(most_frequent_words)
+        if text_from_file is not None:
+            count_of_popular_words = 10
+            most_frequent_words = get_most_frequent_words(
+                text_from_file,
+                count_of_popular_words
+            )
+            print_most_frequent_words(most_frequent_words)
