@@ -4,6 +4,9 @@ import re
 import collections
 
 
+NUMBER_OF_POPULAR_WORDS = 10
+
+
 def load_data(file_name):
     if not os.path.exists(file_name):
         return None
@@ -13,12 +16,12 @@ def load_data(file_name):
 
 def get_most_frequent_words(text):
     words = re.findall(r"\w+", text.lower())
-    return collections.Counter(words).most_common(10)
+    return collections.Counter(words).most_common(NUMBER_OF_POPULAR_WORDS)
 
 
 def get_text_file_name():
-    name = sys.argv[1]
-    return name
+    file_name = sys.argv[1]
+    return file_name
 
 
 def print_most_frequent_words(list_of_words):

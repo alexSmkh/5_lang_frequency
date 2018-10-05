@@ -17,5 +17,5 @@ python lang_frequency.py Orwell_George_-_1984.txt
 а 123
 ```
 
-# Project goals
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+# Цели проекта
+Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DEVMAN.org](https://devman.org)
