@@ -2,7 +2,7 @@
 
 Скрипт принимает текстовый файл и выводит 10 самых популярных слов
 
-#Пример запуска
+# Пример запуска
 ```bash
 python lang_frequency.py Orwell_George_-_1984.txt
 и 626
@@ -17,5 +17,5 @@ python lang_frequency.py Orwell_George_-_1984.txt
 а 123
 ```
 
-#Project goals
+# Project goals
 The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
