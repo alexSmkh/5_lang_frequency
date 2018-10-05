@@ -4,9 +4,6 @@ import re
 import collections
 
 
-NUMBER_OF_POPULAR_WORDS = 10
-
-
 def load_data(file_name):
     if not os.path.exists(file_name):
         return None
@@ -14,23 +11,28 @@ def load_data(file_name):
         return file_handler.read()
 
 
-def get_most_frequent_words(text):
-    words = re.findall(r"\w+", text.lower())
-    return collections.Counter(words).most_common(NUMBER_OF_POPULAR_WORDS)
+def get_most_frequent_words(text, count_of_words):
+    words = re.findall(r'\w+', text.lower())
+    return collections.Counter(words).most_common(count_of_words)
 
 
 def get_text_file_name():
-    file_name = sys.argv[1]
-    return file_name
+    try:
+        file_name = sys.argv[1]
+        return file_name
+    except IndexError:
+        return None
 
 
 def print_most_frequent_words(list_of_words):
-    for word, num in list_of_words:
-        print(word, num)
+    for word, count in list_of_words:
+        print(word, '-', count)
 
 
 if __name__ == '__main__':
-    text_file = get_text_file_name()
-    text_from_file = load_data(text_file)
-    most_frequent_words = get_most_frequent_words(text_from_file)
-    print_most_frequent_words(most_frequent_words)
+    text_file_name = get_text_file_name()
+    text_from_file = load_data(text_file_name)
+    if text_from_file:
+        count_of_popular_words = 10
+        most_frequent_words = get_most_frequent_words(text_from_file, count_of_popular_words)
+        print_most_frequent_words(most_frequent_words)
